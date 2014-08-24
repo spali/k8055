@@ -19,6 +19,7 @@ Additional this can be defined during installation:
 
 ### Uninstall
 
+To uninstall simply execute
 	```make uninstall```
 
 ## Authors
