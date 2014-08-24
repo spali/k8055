@@ -153,13 +153,18 @@ static void init_usb(void)
 static int ReadK8055Data(void)
 {
     int read_status = 0, i = 0;
+    int n;
 
     if (CurrDev->DevNo == 0) return K8055_ERROR;
 
     for(i=0; i < 3; i++)
         {
         read_status = usb_interrupt_read(CurrDev->device_handle, USB_INP_EP, (char *)CurrDev->data_in, PACKET_LEN, USB_TIMEOUT);
-        if ((read_status == PACKET_LEN) && (CurrDev->data_in[1] == CurrDev->DevNo )) return 0;
+        // fix for PVM110 cards
+        n = CurrDev->data_in[1] & 0xf;
+        if (n > 4) n -= 10;
+
+        if ((read_status == PACKET_LEN) && (n == CurrDev->DevNo )) return 0;
         if (DEBUG)
             fprintf(stderr, "Read retry\n");
         }
