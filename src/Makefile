@@ -19,7 +19,7 @@ LIBS = -lusb -L$(PREFIX)/usr/lib -lm
 LINK = ln
 
 libk8055.so.$(VERSION): libk8055.o
-	$(CC) -o libk8055.so.${VERSION} $(LIBS) -shared libk8055.o
+	$(CC) -o libk8055.so.${VERSION} -shared libk8055.o $(LIBS)
 	-$(LINK) -sf libk8055.so.${VERSION} libk8055.so
 
 libk8055.o: libk8055.c
