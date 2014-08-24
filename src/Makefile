@@ -46,6 +46,9 @@ clean:
 	@$(MAKE) -C $(PYLIBDIR) clean
 
 install: k8055_prog libk8055.so.$(VERSION)
+	if !(test -d $(BINDIR)); then \
+	  mkdir -p $(BINDIR); \
+	fi
 	cp -f $(EXEC) $(BINDIR)/
 	if !(test -d $(LIBDIR)); then \
 	  mkdir -p $(LIBDIR); \
