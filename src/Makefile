@@ -15,7 +15,7 @@ INCLUDEDIR = $(PREFIX)/include
 MANDIR = $(PREFIX)/man/man1
 OBJS = main.o libk8055.o
 CFLAGS = -O2 -DDAEMON -DVERSION='"$(VERSION)"' -Wall
-LIBS = -lusb -L/usr/lib -lm
+LIBS = -lusb -L$(PREFIX)/usr/lib -lm
 LINK = ln
 
 libk8055.so.$(VERSION): libk8055.o
