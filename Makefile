@@ -24,7 +24,7 @@ install-permission:
 
 uninstall: uninstall-permission
 	rm -f $(PREFIX)/lib/libk8055.*
-	rm -f $(PREFIX)/man/man1/k8055.*
+	rm -f $(PREFIX)/usr/local/share/man/man1/k8055.*
 	rm -f $(PREFIX)/include/k8055.*
 	rm -f $(PREFIX)/bin/k8055
 	find $(PREFIX) -type d -empty -delete

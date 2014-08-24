@@ -12,7 +12,7 @@ BINDIR = $(PREFIX)/bin
 LIBDIR = $(PREFIX)/lib
 PYLIBDIR = pyk8055
 INCLUDEDIR = $(PREFIX)/include
-MANDIR = $(PREFIX)/man/man1
+MANDIR = $(PREFIX)/usr/local/share/man/man1
 OBJS = main.o libk8055.o
 CFLAGS = -O2 -DDAEMON -DVERSION='"$(VERSION)"' -Wall
 LIBS = -lusb -L$(PREFIX)/usr/lib -lm
